@@ -1,0 +1,12 @@
+#!/bin/bash
+if [ $# -ge 1 ]; then
+    TARGET=$1
+fi
+source /home/users/chenchao01/bin/.conf/go.conf
+eval host="$"$TARGET
+if [ -z "$host" ];then
+    echo "nothing"
+    exit 1
+fi
+
+ssh $host

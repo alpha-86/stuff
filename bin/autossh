@@ -1,0 +1,10 @@
+#!/bin/bash
+if [ $# -ge 1 ]; then
+    TARGET=$1
+fi
+
+if [ ! -f /home/users/chenchao01/.ssh/id_rsa.pub ]; then
+    ssh-keygen -t rsa
+fi
+scp /home/users/chenchao01/.ssh/id_rsa.pub $TARGET:~/.ssh/tmp_pub
+ssh $TARGET "cat ~/.ssh/tmp_pub >> ~/.ssh/authorized_keys"
