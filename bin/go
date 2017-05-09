@@ -2,7 +2,7 @@
 if [ $# -ge 1 ]; then
     TARGET=$1
 fi
-path=`pwd`
+path=$(cd `dirname $0`; pwd)
 source $path/.conf/go.conf
 eval host="$"$TARGET
 if [ -z "$host" ];then
