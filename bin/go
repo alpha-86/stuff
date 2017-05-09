@@ -2,7 +2,8 @@
 if [ $# -ge 1 ]; then
     TARGET=$1
 fi
-source /home/users/chenchao01/bin/.conf/go.conf
+path=`pwd`
+source $path/.conf/go.conf
 eval host="$"$TARGET
 if [ -z "$host" ];then
     echo "nothing"
